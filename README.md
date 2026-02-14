@@ -27,3 +27,4 @@ Notes
 
 License: MIT (you can change as needed)
 # imagemap
+# imagemap
