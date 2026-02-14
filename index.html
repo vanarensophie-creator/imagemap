@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photo Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+    <h1>Photo Map</h1>
+    <p>Select photos or videos (multiple) to plot their locations on the map. For items without GPS you can manually "Pin" them on the map.</p>
+  </header>
+
+  <main>
+    <section id="controls">
+      <button id="btnFiles" class="file-label">Choose from Files</button>
+      <button id="btnPhotos" class="file-label" style="display:none">Choose from Photos (Safari)</button>
+      <input id="fileInputFiles" type="file" accept="image/*,video/*" multiple style="display:none" />
+      <input id="fileInputPhotos" type="file" accept="image/*,video/*" multiple style="display:none" />
+      <div id="status"></div>
+    </section>
+
+    <section id="controls-extra">
+      <button id="toggleList" class="file-label" aria-expanded="false">Show selected files</button>
+    </section>
+
+    <section id="fileList" class="collapsed" aria-hidden="true">
+      <ul id="fileListItems"></ul>
+    </section>
+
+    <section id="gallery" aria-live="polite"></section>
+
+    <div id="map" role="application" aria-label="Photo map"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
